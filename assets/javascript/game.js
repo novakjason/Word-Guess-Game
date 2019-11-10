@@ -5,16 +5,23 @@ console.log(animals);
 var underscore = [];
 
 // Choose random word to display
-var randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-console.log(randomAnimal);
+function randomAnimal() { 
+    answer = animals[Math.floor(Math.random() * animals.length)];
+    console.log('Answer: ' + answer);
+    return answer
+}
+
+function newGame() {
+    randomAnimal();
+    blankWord();
+}
 
 
 // Select characters of the word and display an underscore for each character
 function displayUnderscore() {
-    for (var i = 0; i < randomAnimal.length; i++) {
+    for (var i = 0; i < answer.length; i++) {
         underscore.push('_');
     }
-    
     return underscore;
 }
 
@@ -48,4 +55,4 @@ var tallyGuess = 10;
 
 var winStreak = 0;
 
-blankWord();
+newGame();
